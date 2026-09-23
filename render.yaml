@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: notification-system-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: ./build.sh
+    startCommand: gunicorn config.wsgi:application
