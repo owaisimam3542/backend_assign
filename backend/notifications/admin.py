@@ -67,6 +67,7 @@ from .models import (
     NotificationTemplate,
     PushSubscription,
     NotificationLog,
+UserProfile,
 )
 
 
@@ -135,4 +136,15 @@ class NotificationLogAdmin(admin.ModelAdmin):
     search_fields = (
         "user__username",
         "response",
+    )
+
+@admin.register(UserProfile)
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = (
+        "user",
+        "phone_number",
+    )
+    search_fields = (
+        "user__username",
+        "phone_number",
     )
