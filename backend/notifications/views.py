@@ -180,7 +180,7 @@ class NotificationTemplateTestView(APIView):
         #         "response": result.get("response"),
         #     }
         # )
-        print("WHATSAPP TEST RESULT:", result)
+        print("TEST RESULT:", result)
         return Response(
             {
                 "success": result.get("success", False),
