@@ -50,9 +50,9 @@ class LoginView(APIView):
             NotificationService.dispatch(trigger, user)
         except Trigger.DoesNotExist:
             pass
-        except Exception:
+        except Exception as exc:
             # Notification failure should not prevent successful login.
-            pass
+            print("LOGIN NOTIFICATION ERROR:", exc)
 
         return Response(
             {
